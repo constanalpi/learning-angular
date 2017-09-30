@@ -1,4 +1,4 @@
-import { Hero } from ''./hero';
+import { Hero } from './hero';
 
 const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
@@ -27,6 +27,7 @@ import { Component } from '@angular/core';
         <span class="badge">{{ hero.id }} </span>{{ hero.name }}
       </li>
     </ul>
+    <hero-detail [hero]="selectedHero"></hero-detail>
   `,
   styles: [`
       .selected {
