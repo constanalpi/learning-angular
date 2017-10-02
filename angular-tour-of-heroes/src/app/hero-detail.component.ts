@@ -1,11 +1,11 @@
-import { Hero } from ''./hero';
+import { Hero } from './hero';
 
-mport { Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-@CJomponent({
+@Component({
   selector: 'hero-detail',
   template: `
-    <div *ngIf="selectedHero">
+    <div *ngIf="hero">
       <h2>{{ hero.name }} details!</h2>
       <div><label>id: </label>{{  hero.id  }}</div>
       <div>
