@@ -8,26 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-/**
- * Add the template content to the DOM unless the condition is true.
- *
- * If the expression assigned to `myUnless` evaluates to a truthy value
- * then the templated elements are removed removed from the DOM,
- * the templated elements are (re)inserted into the DOM.
- *
- * <div *ngUnless="errorCount" class="success">
- *   Congrats! Everything is great!
- * </div>
- *
- * ### Syntax
- *
- * - `<div *myUnless="condition">...</div>`
- * - `<div template="myUnless condition">...</div>`
- * - `<template [myUnless]="condition"><div>...</div></template>`
- *
- */
 var UnlessDirective = (function () {
     function UnlessDirective(templateRef, viewContainer) {
         this.templateRef = templateRef;
