@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `<hero-form></hero-form>`,
 })
-export class AppComponent { }
+export class AppComponent  { }

@@ -14,40 +14,40 @@ var animations_1 = require("@angular/animations");
 var HeroListInlineStylesComponent = (function () {
     function HeroListInlineStylesComponent() {
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], HeroListInlineStylesComponent.prototype, "heroes", void 0);
+    HeroListInlineStylesComponent = __decorate([
+        core_1.Component({
+            selector: 'hero-list-inline-styles',
+            template: "\n   <ul>\n     <li *ngFor=\"let hero of heroes\"\n         [@heroState]=\"hero.state\"\n         (click)=\"hero.toggleState()\">\n       {{hero.name}}\n     </li>\n   </ul>\n ",
+            styleUrls: ['./hero-list.component.css'],
+            /**
+             * Define two states, "inactive" and "active", and the end
+             * styles that apply whenever the element is in those states.
+             * Then define an animation for the inactive => active transition.
+             * This animation has no end styles, but only styles that are
+             * defined inline inside the transition and thus are only kept
+             * as long as the animation is running.
+             */
+            animations: [
+                animations_1.trigger('heroState', [
+                    animations_1.transition('inactive => active', [
+                        animations_1.style({
+                            backgroundColor: '#cfd8dc',
+                            transform: 'scale(1.3)'
+                        }),
+                        animations_1.animate('80ms ease-in', animations_1.style({
+                            backgroundColor: '#eee',
+                            transform: 'scale(1)'
+                        }))
+                    ]),
+                ])
+            ]
+        })
+    ], HeroListInlineStylesComponent);
     return HeroListInlineStylesComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], HeroListInlineStylesComponent.prototype, "heroes", void 0);
-HeroListInlineStylesComponent = __decorate([
-    core_1.Component({
-        selector: 'hero-list-inline-styles',
-        template: "\n   <ul>\n     <li *ngFor=\"let hero of heroes\"\n         [@heroState]=\"hero.state\"\n         (click)=\"hero.toggleState()\">\n       {{hero.name}}\n     </li>\n   </ul>\n ",
-        styleUrls: ['./hero-list.component.css'],
-        /**
-         * Define two states, "inactive" and "active", and the end
-         * styles that apply whenever the element is in those states.
-         * Then define an animation for the inactive => active transition.
-         * This animation has no end styles, but only styles that are
-         * defined inline inside the transition and thus are only kept
-         * as long as the animation is running.
-         */
-        animations: [
-            animations_1.trigger('heroState', [
-                animations_1.transition('inactive => active', [
-                    animations_1.style({
-                        backgroundColor: '#cfd8dc',
-                        transform: 'scale(1.3)'
-                    }),
-                    animations_1.animate('80ms ease-in', animations_1.style({
-                        backgroundColor: '#eee',
-                        transform: 'scale(1)'
-                    }))
-                ]),
-            ])
-        ]
-    })
-], HeroListInlineStylesComponent);
 exports.HeroListInlineStylesComponent = HeroListInlineStylesComponent;
 //# sourceMappingURL=hero-list-inline-styles.component.js.map

@@ -54,10 +54,10 @@ var HeroService = (function () {
     HeroService.prototype.remove = function () {
         this.heroes.length -= 1;
     };
+    HeroService = __decorate([
+        core_1.Injectable()
+    ], HeroService);
     return HeroService;
 }());
-HeroService = __decorate([
-    core_1.Injectable()
-], HeroService);
 exports.HeroService = HeroService;
 //# sourceMappingURL=hero.service.js.map

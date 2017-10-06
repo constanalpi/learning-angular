@@ -8,11 +8,11 @@ import { HeroFormComponent } from './hero-form.component';
 @NgModule({
   imports:      [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     AppComponent,
-    HeroFormComponent
+    HeroFormComponent,
   ],
   bootstrap:    [ AppComponent ]
 })

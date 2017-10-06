@@ -14,36 +14,36 @@ var animations_1 = require("@angular/animations");
 var HeroListEnterLeaveComponent = (function () {
     function HeroListEnterLeaveComponent() {
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], HeroListEnterLeaveComponent.prototype, "heroes", void 0);
+    HeroListEnterLeaveComponent = __decorate([
+        core_1.Component({
+            selector: 'hero-list-enter-leave',
+            template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          [@flyInOut]=\"'in'\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
+            styleUrls: ['./hero-list.component.css'],
+            /* The element here always has the state "in" when it
+             * is present. We animate two transitions: From void
+             * to in and from in to void, to achieve an animated
+             * enter and leave transition. The element enters from
+             * the left and leaves to the right using translateX.
+             */
+            animations: [
+                animations_1.trigger('flyInOut', [
+                    animations_1.state('in', animations_1.style({ transform: 'translateX(0)' })),
+                    animations_1.transition('void => *', [
+                        animations_1.style({ transform: 'translateX(-100%)' }),
+                        animations_1.animate(100)
+                    ]),
+                    animations_1.transition('* => void', [
+                        animations_1.animate(100, animations_1.style({ transform: 'translateX(100%)' }))
+                    ])
+                ])
+            ]
+        })
+    ], HeroListEnterLeaveComponent);
     return HeroListEnterLeaveComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], HeroListEnterLeaveComponent.prototype, "heroes", void 0);
-HeroListEnterLeaveComponent = __decorate([
-    core_1.Component({
-        selector: 'hero-list-enter-leave',
-        template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          [@flyInOut]=\"'in'\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
-        styleUrls: ['./hero-list.component.css'],
-        /* The element here always has the state "in" when it
-         * is present. We animate two transitions: From void
-         * to in and from in to void, to achieve an animated
-         * enter and leave transition. The element enters from
-         * the left and leaves to the right using translateX.
-         */
-        animations: [
-            animations_1.trigger('flyInOut', [
-                animations_1.state('in', animations_1.style({ transform: 'translateX(0)' })),
-                animations_1.transition('void => *', [
-                    animations_1.style({ transform: 'translateX(-100%)' }),
-                    animations_1.animate(100)
-                ]),
-                animations_1.transition('* => void', [
-                    animations_1.animate(100, animations_1.style({ transform: 'translateX(100%)' }))
-                ])
-            ])
-        ]
-    })
-], HeroListEnterLeaveComponent);
 exports.HeroListEnterLeaveComponent = HeroListEnterLeaveComponent;
 //# sourceMappingURL=hero-list-enter-leave.component.js.map

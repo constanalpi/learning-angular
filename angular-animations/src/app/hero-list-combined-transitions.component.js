@@ -14,37 +14,37 @@ var animations_1 = require("@angular/animations");
 var HeroListCombinedTransitionsComponent = (function () {
     function HeroListCombinedTransitionsComponent() {
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], HeroListCombinedTransitionsComponent.prototype, "heroes", void 0);
+    HeroListCombinedTransitionsComponent = __decorate([
+        core_1.Component({
+            selector: 'hero-list-combined-transitions',
+            template: "\n   <ul>\n     <li *ngFor=\"let hero of heroes\"\n         [@heroState]=\"hero.state\"\n         (click)=\"hero.toggleState()\">\n       {{hero.name}}\n     </li>\n   </ul>\n ",
+            styleUrls: ['./hero-list.component.css'],
+            /*
+             * Define two states, "inactive" and "active", and the end
+             * styles that apply whenever the element is in those states.
+             * Then define an animated transition between these two
+             * states, in *both* directions.
+             */
+            animations: [
+                animations_1.trigger('heroState', [
+                    animations_1.state('inactive', animations_1.style({
+                        backgroundColor: '#eee',
+                        transform: 'scale(1)'
+                    })),
+                    animations_1.state('active', animations_1.style({
+                        backgroundColor: '#cfd8dc',
+                        transform: 'scale(1.1)'
+                    })),
+                    animations_1.transition('inactive => active, active => inactive', animations_1.animate('100ms ease-out'))
+                ])
+            ]
+        })
+    ], HeroListCombinedTransitionsComponent);
     return HeroListCombinedTransitionsComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], HeroListCombinedTransitionsComponent.prototype, "heroes", void 0);
-HeroListCombinedTransitionsComponent = __decorate([
-    core_1.Component({
-        selector: 'hero-list-combined-transitions',
-        template: "\n   <ul>\n     <li *ngFor=\"let hero of heroes\"\n         [@heroState]=\"hero.state\"\n         (click)=\"hero.toggleState()\">\n       {{hero.name}}\n     </li>\n   </ul>\n ",
-        styleUrls: ['./hero-list.component.css'],
-        /*
-         * Define two states, "inactive" and "active", and the end
-         * styles that apply whenever the element is in those states.
-         * Then define an animated transition between these two
-         * states, in *both* directions.
-         */
-        animations: [
-            animations_1.trigger('heroState', [
-                animations_1.state('inactive', animations_1.style({
-                    backgroundColor: '#eee',
-                    transform: 'scale(1)'
-                })),
-                animations_1.state('active', animations_1.style({
-                    backgroundColor: '#cfd8dc',
-                    transform: 'scale(1.1)'
-                })),
-                animations_1.transition('inactive => active, active => inactive', animations_1.animate('100ms ease-out'))
-            ])
-        ]
-    })
-], HeroListCombinedTransitionsComponent);
 exports.HeroListCombinedTransitionsComponent = HeroListCombinedTransitionsComponent;
 //# sourceMappingURL=hero-list-combined-transitions.component.js.map

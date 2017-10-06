@@ -14,31 +14,31 @@ var animations_1 = require("@angular/animations");
 var HeroListAutoComponent = (function () {
     function HeroListAutoComponent() {
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], HeroListAutoComponent.prototype, "heroes", void 0);
+    HeroListAutoComponent = __decorate([
+        core_1.Component({
+            selector: 'hero-list-auto',
+            template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          [@shrinkOut]=\"'in'\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
+            styleUrls: ['./hero-list.component.css'],
+            /* When the element leaves (transition "in => void" occurs),
+             * get the element's current computed height and animate
+             * it down to 0.
+             */
+            animations: [
+                animations_1.trigger('shrinkOut', [
+                    animations_1.state('in', animations_1.style({ height: '*' })),
+                    animations_1.transition('* => void', [
+                        animations_1.style({ height: '*' }),
+                        animations_1.animate(250, animations_1.style({ height: 0 }))
+                    ])
+                ])
+            ]
+        })
+    ], HeroListAutoComponent);
     return HeroListAutoComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], HeroListAutoComponent.prototype, "heroes", void 0);
-HeroListAutoComponent = __decorate([
-    core_1.Component({
-        selector: 'hero-list-auto',
-        template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          [@shrinkOut]=\"'in'\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
-        styleUrls: ['./hero-list.component.css'],
-        /* When the element leaves (transition "in => void" occurs),
-         * get the element's current computed height and animate
-         * it down to 0.
-         */
-        animations: [
-            animations_1.trigger('shrinkOut', [
-                animations_1.state('in', animations_1.style({ height: '*' })),
-                animations_1.transition('* => void', [
-                    animations_1.style({ height: '*' }),
-                    animations_1.animate(250, animations_1.style({ height: 0 }))
-                ])
-            ])
-        ]
-    })
-], HeroListAutoComponent);
 exports.HeroListAutoComponent = HeroListAutoComponent;
 //# sourceMappingURL=hero-list-auto.component.js.map

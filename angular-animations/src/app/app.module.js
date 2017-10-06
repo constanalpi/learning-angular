@@ -23,27 +23,27 @@ var hero_list_timings_component_1 = require("./hero-list-timings.component");
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule, animations_1.BrowserAnimationsModule],
+            // ... more stuff ...
+            declarations: [
+                hero_team_builder_component_1.HeroTeamBuilderComponent,
+                hero_list_basic_component_1.HeroListBasicComponent,
+                hero_list_inline_styles_component_1.HeroListInlineStylesComponent,
+                hero_list_combined_transitions_component_1.HeroListCombinedTransitionsComponent,
+                hero_list_twoway_component_1.HeroListTwowayComponent,
+                hero_list_enter_leave_component_1.HeroListEnterLeaveComponent,
+                hero_list_enter_leave_states_component_1.HeroListEnterLeaveStatesComponent,
+                hero_list_auto_component_1.HeroListAutoComponent,
+                hero_list_timings_component_1.HeroListTimingsComponent,
+                hero_list_multistep_component_1.HeroListMultistepComponent,
+                hero_list_groups_component_1.HeroListGroupsComponent
+            ],
+            bootstrap: [hero_team_builder_component_1.HeroTeamBuilderComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, animations_1.BrowserAnimationsModule],
-        // ... more stuff ...
-        declarations: [
-            hero_team_builder_component_1.HeroTeamBuilderComponent,
-            hero_list_basic_component_1.HeroListBasicComponent,
-            hero_list_inline_styles_component_1.HeroListInlineStylesComponent,
-            hero_list_combined_transitions_component_1.HeroListCombinedTransitionsComponent,
-            hero_list_twoway_component_1.HeroListTwowayComponent,
-            hero_list_enter_leave_component_1.HeroListEnterLeaveComponent,
-            hero_list_enter_leave_states_component_1.HeroListEnterLeaveStatesComponent,
-            hero_list_auto_component_1.HeroListAutoComponent,
-            hero_list_timings_component_1.HeroListTimingsComponent,
-            hero_list_multistep_component_1.HeroListMultistepComponent,
-            hero_list_groups_component_1.HeroListGroupsComponent
-        ],
-        bootstrap: [hero_team_builder_component_1.HeroTeamBuilderComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
