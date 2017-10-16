@@ -14,47 +14,47 @@ var animations_1 = require("@angular/animations");
 var HeroListEnterLeaveStatesComponent = (function () {
     function HeroListEnterLeaveStatesComponent() {
     }
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], HeroListEnterLeaveStatesComponent.prototype, "heroes", void 0);
-    HeroListEnterLeaveStatesComponent = __decorate([
-        core_1.Component({
-            selector: 'hero-list-enter-leave-states',
-            template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          (click)=\"hero.toggleState()\"\n          [@heroState]=\"hero.state\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
-            styleUrls: ['./hero-list.component.css'],
-            /* The elements here have two possible states based
-             * on the hero state, "active", or "inactive". We animate
-             * six transitions: Between the two states in both directions,
-             * and between each state and void. With this we can animate
-             * the enter and leave of elements differently based on which
-             * state they are in when they are added and removed.
-             */
-            animations: [
-                animations_1.trigger('heroState', [
-                    animations_1.state('inactive', animations_1.style({ transform: 'translateX(0) scale(1)' })),
-                    animations_1.state('active', animations_1.style({ transform: 'translateX(0) scale(1.1)' })),
-                    animations_1.transition('inactive => active', animations_1.animate('100ms ease-in')),
-                    animations_1.transition('active => inactive', animations_1.animate('100ms ease-out')),
-                    animations_1.transition('void => inactive', [
-                        animations_1.style({ transform: 'translateX(-100%) scale(1)' }),
-                        animations_1.animate(100)
-                    ]),
-                    animations_1.transition('inactive => void', [
-                        animations_1.animate(100, animations_1.style({ transform: 'translateX(100%) scale(1)' }))
-                    ]),
-                    animations_1.transition('void => active', [
-                        animations_1.style({ transform: 'translateX(0) scale(0)' }),
-                        animations_1.animate(200)
-                    ]),
-                    animations_1.transition('active => void', [
-                        animations_1.animate(200, animations_1.style({ transform: 'translateX(0) scale(0)' }))
-                    ])
-                ])
-            ]
-        })
-    ], HeroListEnterLeaveStatesComponent);
     return HeroListEnterLeaveStatesComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], HeroListEnterLeaveStatesComponent.prototype, "heroes", void 0);
+HeroListEnterLeaveStatesComponent = __decorate([
+    core_1.Component({
+        selector: 'hero-list-enter-leave-states',
+        template: "\n    <ul>\n      <li *ngFor=\"let hero of heroes\"\n          (click)=\"hero.toggleState()\"\n          [@heroState]=\"hero.state\">\n        {{hero.name}}\n      </li>\n    </ul>\n  ",
+        styleUrls: ['./hero-list.component.css'],
+        /* The elements here have two possible states based
+         * on the hero state, "active", or "inactive". We animate
+         * six transitions: Between the two states in both directions,
+         * and between each state and void. With this we can animate
+         * the enter and leave of elements differently based on which
+         * state they are in when they are added and removed.
+         */
+        animations: [
+            animations_1.trigger('heroState', [
+                animations_1.state('inactive', animations_1.style({ transform: 'translateX(0) scale(1)' })),
+                animations_1.state('active', animations_1.style({ transform: 'translateX(0) scale(1.1)' })),
+                animations_1.transition('inactive => active', animations_1.animate('100ms ease-in')),
+                animations_1.transition('active => inactive', animations_1.animate('100ms ease-out')),
+                animations_1.transition('void => inactive', [
+                    animations_1.style({ transform: 'translateX(-100%) scale(1)' }),
+                    animations_1.animate(100)
+                ]),
+                animations_1.transition('inactive => void', [
+                    animations_1.animate(100, animations_1.style({ transform: 'translateX(100%) scale(1)' }))
+                ]),
+                animations_1.transition('void => active', [
+                    animations_1.style({ transform: 'translateX(0) scale(0)' }),
+                    animations_1.animate(200)
+                ]),
+                animations_1.transition('active => void', [
+                    animations_1.animate(200, animations_1.style({ transform: 'translateX(0) scale(0)' }))
+                ])
+            ])
+        ]
+    })
+], HeroListEnterLeaveStatesComponent);
 exports.HeroListEnterLeaveStatesComponent = HeroListEnterLeaveStatesComponent;
 //# sourceMappingURL=hero-list-enter-leave-states.component.js.map
