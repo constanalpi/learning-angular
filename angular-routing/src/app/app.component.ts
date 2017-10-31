@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
     </nav>
     <router-outlet></router-outlet>
-  `
+  `,
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent { }
